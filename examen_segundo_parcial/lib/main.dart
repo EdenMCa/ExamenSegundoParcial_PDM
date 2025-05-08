@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:examen_segundo_parcial/pantallas/pantalla_principal.dart';
 
 void main() => runApp(const MyApp());
-
+                                                                                                                                                                                                                                                                                                                                                       
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 

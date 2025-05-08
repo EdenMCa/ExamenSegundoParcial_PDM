@@ -7,26 +7,62 @@ class PantallaPrincipal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sorteo de Alumnos'),
-      ),
+      backgroundColor: Colors.grey[50],
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              'Bienvenido al sistema de sorteos',
-              style: TextStyle(fontSize: 20),
+            Icon(
+              Icons.people_alt_outlined,
+              size: 200,
+              color: Colors.blueGrey[600],
             ),
-            const SizedBox(height: 30),
-            ElevatedButton(
+            const SizedBox(height: 24),
+            const Text(
+              'Sistema de Sorteos',
+              style:  TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+                color:   Color.fromARGB(255, 0, 0, 0),
+                letterSpacing: 1.2,
+              ),
+            ),
+            const SizedBox(height: 8),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 40.0),
+              child: Text(
+                'Selecciona alumnos ganadores de manera aleatoria',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.blueGrey[600],
+                  height: 1.4,
+                ),
+              ),
+            ),
+            const SizedBox(height: 40),
+            OutlinedButton(
               onPressed: () => Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => const SeleccionSemestre(),
                 ),
               ),
-              child: const Text('Iniciar Sorteo'),
+              style: OutlinedButton.styleFrom(
+                foregroundColor: Colors.blue[600],
+                side: BorderSide(color: Colors.blue[400]!),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 36,
+                  vertical: 16,
+                ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
+              child: const Text(
+                'Iniciar Sorteo',
+                style: TextStyle(fontSize: 16),
+              ),
             ),
           ],
         ),
