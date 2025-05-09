@@ -68,12 +68,6 @@ flutter:
       - assets/images/compa_6.jpeg
       - assets/images/compa_7.jpeg
 
-  assets_cuarto:
-      - assets/imagenes_cuarto_semestre/cuarto_1.jpeg
-      - assets/imagenes_cuarto_semestre/cuarto_2.jpeg
-      - assets/imagenes_cuarto_semestre/cuarto_3.jpeg
-      - assets/imagenes_cuarto_semestre/cuarto_4.jpeg
-
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

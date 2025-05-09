@@ -12,7 +12,7 @@ class SegundoSemestre extends StatefulWidget {
 class _SegundoSemestreState extends State<SegundoSemestre> {
   late List<String> alumnos;
   String _ganador = '';
-  var _rutaImagen = 'assets/images/segundo_semestre/default.jpg';
+  var _rutaImagen = 'assets/images/compa_1.jpeg';
   bool _estaAnimado = false;
 
   @override
@@ -24,20 +24,20 @@ class _SegundoSemestreState extends State<SegundoSemestre> {
 
   void _cargarImagenesSemestre() {
     // Puedes cargar aquí imágenes específicas para segundo semestre
-    _rutaImagen = 'assets/images/segundo_semestre/imagen1.jpg';
+    _rutaImagen = 'assets/images/compa_1.jpeg';
   }
 
   Future<void> _realizarSorteo() async {
     if (!_estaAnimado) {
       _estaAnimado = true;
-      
+
       // Animación con imágenes específicas de segundo semestre
       final imagenes = [
-        'assets/images/segundo_semestre/imagen1.jpg',
-        'assets/images/segundo_semestre/imagen2.jpg',
-        'assets/images/segundo_semestre/imagen3.jpg',
+        'assets/images/compa_1.jpeg',
+        'assets/images/compa_2.jpeg',
+        'assets/images/compa_3.jpeg',
       ];
-      
+
       for (var i = 0; i < 10; i++) {
         setState(() {
           _rutaImagen = imagenes[Random().nextInt(imagenes.length)];
@@ -60,12 +60,10 @@ class _SegundoSemestreState extends State<SegundoSemestre> {
       ),
       body: Container(
         decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.blue, Colors.green], // Gradiente diferente para 2° semestre
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-        ),
+            gradient: RadialGradient(colors: [
+          Color.fromRGBO(255, 255, 255, 10),
+          Color.fromRGBO(224, 224, 180, 0.965)
+        ], radius: 0.4)),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -73,7 +71,7 @@ class _SegundoSemestreState extends State<SegundoSemestre> {
               ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: Image.asset(
-                  _rutaImagen, 
+                  _rutaImagen,
                   width: 250,
                   height: 250,
                   fit: BoxFit.cover,
@@ -81,8 +79,10 @@ class _SegundoSemestreState extends State<SegundoSemestre> {
               ),
               const SizedBox(height: 20),
               Text(
-                _ganador.isEmpty ? 'Presiona el botón para sortear' : 'Ganador: $_ganador',
-                style: const TextStyle(fontSize: 24, color: Colors.white),
+                _ganador.isEmpty
+                    ? 'Presiona el botón para sortear'
+                    : 'Ganador: $_ganador',
+                style: const TextStyle(fontSize: 24, color: Color.fromARGB(255, 0, 0, 0)),
               ),
               const SizedBox(height: 20),
               ElevatedButton.icon(
@@ -90,9 +90,11 @@ class _SegundoSemestreState extends State<SegundoSemestre> {
                 icon: const Icon(Icons.refresh),
                 label: const Text('Realizar Sorteo'),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green, // Color diferente para 2° semestre
-                  foregroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                  backgroundColor:
+                      Colors.green, // Color diferente para 2° semestre
+                  foregroundColor: const Color.fromARGB(255, 0, 0, 0),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
                 ),
               ),
             ],
