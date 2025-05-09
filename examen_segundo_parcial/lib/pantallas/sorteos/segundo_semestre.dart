@@ -12,7 +12,7 @@ class SegundoSemestre extends StatefulWidget {
 class _SegundoSemestreState extends State<SegundoSemestre> {
   late List<String> alumnos;
   String _ganador = '';
-  var _rutaImagen = 'assets/images/compa_1.jpeg';
+  var _rutaImagen = 'assets/images/segundo/segundo_0.jpeg';
   bool _estaAnimado = false;
 
   @override
@@ -24,7 +24,7 @@ class _SegundoSemestreState extends State<SegundoSemestre> {
 
   void _cargarImagenesSemestre() {
     // Puedes cargar aquí imágenes específicas para segundo semestre
-    _rutaImagen = 'assets/images/compa_1.jpeg';
+    _rutaImagen = 'assets/images/segundo/segundo_0.jpeg';
   }
 
   Future<void> _realizarSorteo() async {
@@ -33,9 +33,25 @@ class _SegundoSemestreState extends State<SegundoSemestre> {
 
       // Animación con imágenes específicas de segundo semestre
       final imagenes = [
-        'assets/images/compa_1.jpeg',
-        'assets/images/compa_2.jpeg',
-        'assets/images/compa_3.jpeg',
+        'assets/images/segundo/segundo_0.jpeg',
+        'assets/images/segundo/segundo_1.jpeg',
+        'assets/images/segundo/segundo_2.jpeg',
+        'assets/images/segundo/segundo_3.jpeg',
+        'assets/images/segundo/segundo_4.jpeg',
+        'assets/images/segundo/segundo_5.jpeg',
+        'assets/images/segundo/segundo_6.jpeg',
+        'assets/images/segundo/segundo_7.jpeg',
+        'assets/images/segundo/segundo_8.jpeg',
+        'assets/images/segundo/segundo_9.jpeg',
+        'assets/images/segundo/segundo_10.jpeg',
+        'assets/images/segundo/segundo_11.jpeg',
+        'assets/images/segundo/segundo_12.jpeg',
+        'assets/images/segundo/segundo_13.jpeg',
+        'assets/images/segundo/segundo_14.jpeg',
+        'assets/images/segundo/segundo_15.jpeg',
+        'assets/images/segundo/segundo_16.jpeg',
+        'assets/images/segundo/segundo_17.jpeg',
+        'assets/images/segundo/segundo_18.jpeg',
       ];
 
       for (var i = 0; i < 10; i++) {
