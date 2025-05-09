@@ -46,9 +46,11 @@ class _DecimoSemestreState extends State<DecimoSemestre> {
 
       // Aquí se realiza la lógica para mostrar la imagen aleatoria.
       setState(() {
-        _i = Random().nextInt(2) + 1; // La función Random asigna un número aleatorio a _i.
-        _rutaImagen = 'assets/images/decimo_semestre/decimo_$_i.jpeg'; // El número aleatorio se agrega a la ruta de la imagen y se guarda en _rutaCara.
-        _ganador = _nombreAlumnos[_i-1];
+        _i = Random().nextInt(2) +
+            1; // La función Random asigna un número aleatorio a _i.
+        _rutaImagen =
+            'assets/images/decimo_semestre/decimo_$_i.jpeg'; // El número aleatorio se agrega a la ruta de la imagen y se guarda en _rutaCara.
+        _ganador = _nombreAlumnos[_i - 1];
       });
       _estaAnimado = false;
     }
@@ -57,15 +59,16 @@ class _DecimoSemestreState extends State<DecimoSemestre> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[50],
       appBar: AppBar(
         title: const Text('Sorteo 10° Semestre'),
+        centerTitle: true,
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        foregroundColor: Colors.blueGrey[800],
       ),
-      body: Container(
-        decoration: const BoxDecoration(
-            gradient: RadialGradient(colors: [
-          Color.fromRGBO(255, 255, 255, 10),
-          Color.fromRGBO(224, 224, 180, 0.965)
-        ], radius: 0.4)),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 24.0),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -79,26 +82,37 @@ class _DecimoSemestreState extends State<DecimoSemestre> {
                   fit: BoxFit.cover,
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 24),
               Text(
                 _ganador.isEmpty
                     ? 'Presiona el botón para sortear'
                     : 'Ganador: $_ganador',
-                style: const TextStyle(fontSize: 24, color: Color.fromARGB(255, 0, 0, 0)),
-              ),
-              const SizedBox(height: 20),
-              ElevatedButton.icon(
-                onPressed: _realizarSorteo,
-                icon: const Icon(Icons.refresh),
-                label: const Text('Realizar Sorteo'),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor:
-                      Colors.green, // Color diferente para 2° semestre
-                  foregroundColor: const Color.fromARGB(255, 0, 0, 0),
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight:
+                      _ganador.isEmpty ? FontWeight.w300 : FontWeight.bold,
+                  color: Colors.blueGrey[800],
+                  height: 1.4,
                 ),
               ),
+              const SizedBox(height: 32),
+              SizedBox(
+                width: 200, // Ancho personalizado del botón
+                child: OutlinedButton.icon(
+                  onPressed: _realizarSorteo,
+                  icon: const Icon(Icons.autorenew),
+                  label: const Text('Realizar Sorteo'),
+                  style: OutlinedButton.styleFrom(
+                    foregroundColor: Colors.blueGrey[800],
+                    side: BorderSide(color: Colors.blueGrey[300]!),
+                    minimumSize: const Size(200, 56), // Tamaño mínimo ajustado
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                  ),
+                ),
+              )
             ],
           ),
         ),
