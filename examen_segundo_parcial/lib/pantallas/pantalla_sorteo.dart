@@ -3,9 +3,9 @@ import 'dart:math';
 import 'package:examen_segundo_parcial/modelos/alumnos.dart';
 
 class PantallaSorteo extends StatefulWidget {
-  final int semestre;
-
   const PantallaSorteo({super.key, required this.semestre});
+  
+  final int semestre;
 
   @override
   State<PantallaSorteo> createState() => _PantallaSorteoState();
@@ -25,7 +25,7 @@ class _PantallaSorteoState extends State<PantallaSorteo> {
   }
 
   Future<void> _realizarSorteo() async {
-    if (!_estaAnimado && alumnos.isNotEmpty) {
+    if (!_estaAnimado) {
       _estaAnimado = true;
       
       // Animación de imágenes
