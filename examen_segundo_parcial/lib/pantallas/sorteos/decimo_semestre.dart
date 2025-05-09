@@ -35,7 +35,7 @@ class _DecimoSemestreState extends State<DecimoSemestre> {
       ];
 
       // Variable que indica cuando dura la animación de movimiento entre imágenes.
-      var duracion = const Duration(milliseconds: 200);
+      var duracion = const Duration(milliseconds: 100);
 
       for (var cara in listaRutas) {
         setState(() {
