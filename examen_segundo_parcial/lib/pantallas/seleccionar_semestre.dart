@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:examen_segundo_parcial/pantallas/sorteos/segundo_semestre.dart';
-import 'package:examen_segundo_parcial/pantallas/sorteos/cuarto_semestre.dart';
+//import 'package:examen_segundo_parcial/pantallas/sorteos/segundo_semestre.dart';
+//import 'package:examen_segundo_parcial/pantallas/sorteos/cuarto_semestre.dart';
 import 'package:examen_segundo_parcial/pantallas/sorteos/sexto_semestre.dart';
 import 'package:examen_segundo_parcial/pantallas/sorteos/octavo_semestre.dart';
-import 'package:examen_segundo_parcial/pantallas/sorteos/decimo_semestre.dart';
+//import 'package:examen_segundo_parcial/pantallas/sorteos/decimo_semestre.dart';
 
 class SeleccionSemestre extends StatelessWidget {
-  const SeleccionSemestre({super.key});
+  SeleccionSemestre({super.key});
 
   // Mapa de semestres a sus respectivas pantallas
-  final Map<int, Widget Function()> semestres = const {
-    2: SegundoSemestre.new,
-    // 4: CuartoSemestre.new,
-    // 6: SextoSemestre.new,
-    // 8: OctavoSemestre.new,
-    // 10: DecimoSemestre.new,
+  final Map<int, Widget Function()> semestres = {
+    //2: () => const SegundoSemestre(),
+    //4: () => const CuartoSemestre(),
+    6: () => const SextoSemestre(),
+    8: () => const OctavoSemestre(),
+    //10: () => const DecimoSemestre(),
   };
 
   @override

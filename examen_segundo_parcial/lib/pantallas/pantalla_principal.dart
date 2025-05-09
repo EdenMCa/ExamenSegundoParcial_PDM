@@ -45,7 +45,7 @@ class PantallaPrincipal extends StatelessWidget {
               onPressed: () => Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const SeleccionSemestre(),
+                  builder: (context) => SeleccionSemestre(),
                 ),
               ),
               style: OutlinedButton.styleFrom(
