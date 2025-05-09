@@ -19,7 +19,7 @@ class SeleccionSemestre extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 24.0),
         child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,  
             children: [
               Icon(
                 Icons.school_outlined,
