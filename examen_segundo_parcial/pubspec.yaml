@@ -50,6 +50,7 @@ dev_dependencies:
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
+
 # The following section is specific to Flutter packages.
 flutter:
 
@@ -60,6 +61,34 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+      - assets/images/compa_1.jpeg
+      - assets/images/compa_2.jpeg
+      - assets/images/compa_3.jpeg
+      - assets/images/compa_4.jpeg
+      - assets/images/compa_5.jpeg
+      - assets/images/compa_6.jpeg
+      - assets/images/compa_7.jpeg
+      
+      - assets/images/segundo/segundo_0.jpeg
+      - assets/images/segundo/segundo_1.jpeg
+      - assets/images/segundo/segundo_2.jpeg
+      - assets/images/segundo/segundo_3.jpeg
+      - assets/images/segundo/segundo_4.jpeg
+      - assets/images/segundo/segundo_5.jpeg
+      - assets/images/segundo/segundo_6.jpeg
+      - assets/images/segundo/segundo_7.jpeg
+      - assets/images/segundo/segundo_8.jpeg
+      - assets/images/segundo/segundo_9.jpeg
+      - assets/images/segundo/segundo_10.jpeg
+      - assets/images/segundo/segundo_11.jpeg
+      - assets/images/segundo/segundo_12.jpeg
+      - assets/images/segundo/segundo_13.jpeg
+      - assets/images/segundo/segundo_14.jpeg
+      - assets/images/segundo/segundo_15.jpeg
+      - assets/images/segundo/segundo_16.jpeg
+      - assets/images/segundo/segundo_17.jpeg
+      - assets/images/segundo/segundo_18.jpeg
+
       - assets/images/cuarto_semestre/cuarto_1.jpeg
       - assets/images/cuarto_semestre/cuarto_2.jpeg
       - assets/images/cuarto_semestre/cuarto_3.jpeg
