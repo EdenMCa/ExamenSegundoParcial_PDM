@@ -12,10 +12,12 @@ class SeleccionSemestre extends StatelessWidget {
   final Map<int, Widget Function()> semestres = const {
     //2: SegundoSemestre.new,
     4: CuartoSemestre.new,
-    // 6: SextoSemestre.new,
-    // 8: OctavoSemestre.new,
+    6: SextoSemestre.new,
+    8: OctavoSemestre.new,
     10: DecimoSemestre.new,
+
   };
+
 
   @override
   Widget build(BuildContext context) {
