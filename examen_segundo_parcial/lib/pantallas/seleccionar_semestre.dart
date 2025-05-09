@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:examen_segundo_parcial/pantallas/sorteos/segundo_semestre.dart';
+//import 'package:examen_segundo_parcial/pantallas/sorteos/segundo_semestre.dart';
 import 'package:examen_segundo_parcial/pantallas/sorteos/cuarto_semestre.dart';
 import 'package:examen_segundo_parcial/pantallas/sorteos/sexto_semestre.dart';
 import 'package:examen_segundo_parcial/pantallas/sorteos/octavo_semestre.dart';
@@ -10,12 +10,13 @@ class SeleccionSemestre extends StatelessWidget {
 
   // Mapa de semestres a sus respectivas pantallas
   final Map<int, Widget Function()> semestres = const {
-    2: SegundoSemestre.new,
+    //2: SegundoSemestre.new,
     4: CuartoSemestre.new,
-    // 6: SextoSemestre.new,
-    // 8: OctavoSemestre.new,
+    6: SextoSemestre.new,
+    8: OctavoSemestre.new,
     10: DecimoSemestre.new,
   };
+
 
   @override
   Widget build(BuildContext context) {

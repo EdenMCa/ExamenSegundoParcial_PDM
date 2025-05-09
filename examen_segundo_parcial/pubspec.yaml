@@ -59,8 +59,7 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  assets:
-      
+  assets:      
       - assets/images/segundo/segundo_0.jpeg
       - assets/images/segundo/segundo_1.jpeg
       - assets/images/segundo/segundo_2.jpeg
@@ -80,7 +79,6 @@ flutter:
       - assets/images/segundo/segundo_16.jpeg
       - assets/images/segundo/segundo_17.jpeg
       - assets/images/segundo/segundo_18.jpeg
-
       - assets/images/cuarto_semestre/cuarto_1.jpeg
       - assets/images/cuarto_semestre/cuarto_2.jpeg
       - assets/images/cuarto_semestre/cuarto_3.jpeg
@@ -92,8 +90,23 @@ flutter:
       - assets/images/cuarto_semestre/cuarto_9.jpeg
       - assets/images/cuarto_semestre/cuarto_10.jpeg
       - assets/images/cuarto_semestre/cuarto_11.jpeg
+      - assets/images/sextoSemestre/compa_1.jpeg
+      - assets/images/sextoSemestre/compa_2.jpeg
+      - assets/images/sextoSemestre/compa_3.jpeg
+      - assets/images/sextoSemestre/compa_4.jpeg
+      - assets/images/sextoSemestre/compa_5.jpeg
+      - assets/images/sextoSemestre/compa_6.jpeg 
+      - assets/images/sextoSemestre/compa_7.jpeg
+      - assets/images/octavoSemestre/octavo_1.jpg
+      - assets/images/octavoSemestre/octavo_2.jpg
+      - assets/images/octavoSemestre/octavo_3.jpg
+      - assets/images/octavoSemestre/octavo_4.jpg
+      - assets/images/octavoSemestre/octavo_5.jpg
+      - assets/images/octavoSemestre/octavo_6.jpg
+      - assets/images/octavoSemestre/octavo_7.jpg
       - assets/images/decimo_semestre/decimo_1.jpeg
       - assets/images/decimo_semestre/decimo_2.jpeg
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
