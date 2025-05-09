@@ -2,40 +2,49 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 import 'package:examen_segundo_parcial/modelos/alumnos.dart';
 
-class PantallaSorteo extends StatefulWidget {
-  const PantallaSorteo({super.key, required this.semestre});
-  
-  final int semestre;
+class SegundoSemestre extends StatefulWidget {
+  const SegundoSemestre({super.key});
 
   @override
-  State<PantallaSorteo> createState() => _PantallaSorteoState();
+  State<SegundoSemestre> createState() => _SegundoSemestreState();
 }
 
-class _PantallaSorteoState extends State<PantallaSorteo> {
+class _SegundoSemestreState extends State<SegundoSemestre> {
   late List<String> alumnos;
   String _ganador = '';
-  var _rutaImagen = 'assets/images/compa_1.jpeg';
+  var _rutaImagen = 'assets/images/segundo_semestre/default.jpg';
   bool _estaAnimado = false;
 
   @override
   void initState() {
     super.initState();
-    // Cargar alumnos al iniciar la pantalla
-    alumnos = DatosAlumnos.obtenerAlumnos(widget.semestre);
+    alumnos = DatosAlumnos.obtenerAlumnos(2); // Semestre 2
+    _cargarImagenesSemestre();
+  }
+
+  void _cargarImagenesSemestre() {
+    // Puedes cargar aquí imágenes específicas para segundo semestre
+    _rutaImagen = 'assets/images/segundo_semestre/imagen1.jpg';
   }
 
   Future<void> _realizarSorteo() async {
     if (!_estaAnimado) {
       _estaAnimado = true;
       
-      // Animación de imágenes
-      final imagenes = List.generate(7, (i) => 'assets/images/compa_${i + 1}.jpeg');
-      for (var imagen in imagenes) {
-        setState(() => _rutaImagen = imagen);
+      // Animación con imágenes específicas de segundo semestre
+      final imagenes = [
+        'assets/images/segundo_semestre/imagen1.jpg',
+        'assets/images/segundo_semestre/imagen2.jpg',
+        'assets/images/segundo_semestre/imagen3.jpg',
+      ];
+      
+      for (var i = 0; i < 10; i++) {
+        setState(() {
+          _rutaImagen = imagenes[Random().nextInt(imagenes.length)];
+        });
         await Future.delayed(const Duration(milliseconds: 200));
       }
 
-      // Selección del ganador
       setState(() {
         _ganador = alumnos[Random().nextInt(alumnos.length)];
         _estaAnimado = false;
@@ -47,20 +56,29 @@ class _PantallaSorteoState extends State<PantallaSorteo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sorteo ${widget.semestre}° Semestre'),
+        title: const Text('Sorteo 2° Semestre'),
       ),
       body: Container(
         decoration: const BoxDecoration(
-          gradient: RadialGradient(
-            colors: [Colors.red, Colors.blue],
-            radius: 1.5,
+          gradient: LinearGradient(
+            colors: [Colors.blue, Colors.green], // Gradiente diferente para 2° semestre
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
           ),
         ),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset(_rutaImagen, width: 250),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: Image.asset(
+                  _rutaImagen, 
+                  width: 250,
+                  height: 250,
+                  fit: BoxFit.cover,
+                ),
+              ),
               const SizedBox(height: 20),
               Text(
                 _ganador.isEmpty ? 'Presiona el botón para sortear' : 'Ganador: $_ganador',
@@ -72,7 +90,7 @@ class _PantallaSorteoState extends State<PantallaSorteo> {
                 icon: const Icon(Icons.refresh),
                 label: const Text('Realizar Sorteo'),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
+                  backgroundColor: Colors.green, // Color diferente para 2° semestre
                   foregroundColor: Colors.white,
                   padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
                 ),

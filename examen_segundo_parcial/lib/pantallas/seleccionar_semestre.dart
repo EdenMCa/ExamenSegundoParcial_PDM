@@ -1,8 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:examen_segundo_parcial/pantallas/pantalla_sorteo.dart';
+import 'package:examen_segundo_parcial/pantallas/sorteos/segundo_semestre.dart';
+import 'package:examen_segundo_parcial/pantallas/sorteos/cuarto_semestre.dart';
+import 'package:examen_segundo_parcial/pantallas/sorteos/sexto_semestre.dart';
+import 'package:examen_segundo_parcial/pantallas/sorteos/octavo_semestre.dart';
+import 'package:examen_segundo_parcial/pantallas/sorteos/decimo_semestre.dart';
 
 class SeleccionSemestre extends StatelessWidget {
   const SeleccionSemestre({super.key});
+
+  // Mapa de semestres a sus respectivas pantallas
+  final Map<int, Widget Function()> semestres = const {
+    2: SegundoSemestre.new,
+    // 4: CuartoSemestre.new,
+    // 6: SextoSemestre.new,
+    // 8: OctavoSemestre.new,
+    // 10: DecimoSemestre.new,
+  };
 
   @override
   Widget build(BuildContext context) {
@@ -38,15 +51,13 @@ class SeleccionSemestre extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 40),
-              ... [2, 4, 6, 8, 10].map((semestre) => Padding(
+              ...semestres.keys.map((semestre) => Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
                 child: OutlinedButton(
                   onPressed: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => PantallaSorteo(
-                        semestre: semestre,
-                      ),
+                      builder: (context) => semestres[semestre]!(),
                     ),
                   ),
                   style: OutlinedButton.styleFrom(
