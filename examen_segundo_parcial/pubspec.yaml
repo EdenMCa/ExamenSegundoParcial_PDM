@@ -50,6 +50,7 @@ dev_dependencies:
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
+
 # The following section is specific to Flutter packages.
 flutter:
 
@@ -80,7 +81,6 @@ flutter:
       - assets/images/segundo_semestre/segundo_18.jpeg
       - assets/images/segundo_semestre/segundo_19.jpeg
 
-
       - assets/images/cuarto_semestre/cuarto_1.jpeg
       - assets/images/cuarto_semestre/cuarto_2.jpeg
       - assets/images/cuarto_semestre/cuarto_3.jpeg
@@ -92,8 +92,23 @@ flutter:
       - assets/images/cuarto_semestre/cuarto_9.jpeg
       - assets/images/cuarto_semestre/cuarto_10.jpeg
       - assets/images/cuarto_semestre/cuarto_11.jpeg
+      - assets/images/sextoSemestre/compa_1.jpeg
+      - assets/images/sextoSemestre/compa_2.jpeg
+      - assets/images/sextoSemestre/compa_3.jpeg
+      - assets/images/sextoSemestre/compa_4.jpeg
+      - assets/images/sextoSemestre/compa_5.jpeg
+      - assets/images/sextoSemestre/compa_6.jpeg 
+      - assets/images/sextoSemestre/compa_7.jpeg
+      - assets/images/octavoSemestre/octavo_1.jpg
+      - assets/images/octavoSemestre/octavo_2.jpg
+      - assets/images/octavoSemestre/octavo_3.jpg
+      - assets/images/octavoSemestre/octavo_4.jpg
+      - assets/images/octavoSemestre/octavo_5.jpg
+      - assets/images/octavoSemestre/octavo_6.jpg
+      - assets/images/octavoSemestre/octavo_7.jpg
       - assets/images/decimo_semestre/decimo_1.jpeg
       - assets/images/decimo_semestre/decimo_2.jpeg
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

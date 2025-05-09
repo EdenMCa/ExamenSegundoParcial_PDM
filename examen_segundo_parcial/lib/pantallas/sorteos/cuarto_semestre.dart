@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
-import 'package:examen_segundo_parcial/modelos/alumnos.dart';
 
 class CuartoSemestre extends StatefulWidget {
   const CuartoSemestre({super.key});
@@ -12,19 +11,27 @@ class CuartoSemestre extends StatefulWidget {
 class _CuartoSemestreState extends State<CuartoSemestre> {
   late List<String> alumnos;
   String _ganador = '';
+  var _i = 1;
   var _rutaImagen = 'assets/images/cuarto_semestre/cuarto_1.jpeg';
   bool _estaAnimado = false;
+
+  final List<String> _nombreAlumnos = [
+    'Alberto',
+    'Héctor',
+    'Yamileth',
+    'Bryan',
+    'Juan',
+    'Rebeca',
+    'Rosalinda',
+    'Jennifer',
+    'Patricia',
+    'Galilea',
+    'Addi'
+  ];
 
   @override
   void initState() {
     super.initState();
-    alumnos = DatosAlumnos.obtenerAlumnos(4); // Semestre 2
-    _cargarImagenesSemestre();
-  }
-
-  void _cargarImagenesSemestre() {
-    // Puedes cargar aquí imágenes específicas para segundo semestre
-    _rutaImagen = 'assets/images/cuarto_semestre/cuarto_1.jpeg';
   }
 
   Future<void> _realizarSorteo() async {
@@ -32,7 +39,7 @@ class _CuartoSemestreState extends State<CuartoSemestre> {
       _estaAnimado = true;
 
       // Animación con imágenes específicas de segundo semestre
-      final imagenes = [
+      List<String> listaRutas = [
         'assets/images/cuarto_semestre/cuarto_1.jpeg',
         'assets/images/cuarto_semestre/cuarto_2.jpeg',
         'assets/images/cuarto_semestre/cuarto_3.jpeg',
@@ -46,17 +53,25 @@ class _CuartoSemestreState extends State<CuartoSemestre> {
         'assets/images/cuarto_semestre/cuarto_11.jpeg',
       ];
 
-      for (var i = 0; i < 10; i++) {
+      // Variable que indica cuando dura la animación de movimiento entre imágenes.
+      var duracion = const Duration(milliseconds: 100);
+
+      for (var cara in listaRutas) {
         setState(() {
-          _rutaImagen = imagenes[Random().nextInt(imagenes.length)];
+          _rutaImagen = cara;
         });
-        await Future.delayed(const Duration(milliseconds: 200));
+        await Future.delayed(duracion);
       }
 
+      // Aquí se realiza la lógica para mostrar la imagen aleatoria.
       setState(() {
-        _ganador = alumnos[Random().nextInt(alumnos.length)];
-        _estaAnimado = false;
+        _i = Random().nextInt(10) +
+            1; // La función Random asigna un número aleatorio a _i.
+        _rutaImagen =
+            'assets/images/cuarto_semestre/cuarto_$_i.jpeg'; // El número aleatorio se agrega a la ruta de la imagen y se guarda en _rutaCara.
+        _ganador = _nombreAlumnos[_i-1];
       });
+      _estaAnimado = false;
     }
   }
 
@@ -90,7 +105,8 @@ class _CuartoSemestreState extends State<CuartoSemestre> {
                 _ganador.isEmpty
                     ? 'Presiona el botón para sortear'
                     : 'Ganador: $_ganador',
-                style: const TextStyle(fontSize: 24, color: Color.fromARGB(255, 0, 0, 0)),
+                style: const TextStyle(
+                    fontSize: 24, color: Color.fromARGB(255, 0, 0, 0)),
               ),
               const SizedBox(height: 20),
               ElevatedButton.icon(
