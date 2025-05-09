@@ -17,10 +17,10 @@ class _SegundoSemestreState extends State<SegundoSemestre> {
 
 
   final List<String> _nombreAlumnos = [
-    'Alexander',
+    'Ailed',
     'Lizbeth',
     'Lidia',
-    'Monteerrat',
+    'Monserrat',
     'Iris',
     'Ana',
     'Jairo',
@@ -33,9 +33,9 @@ class _SegundoSemestreState extends State<SegundoSemestre> {
     'Jaziel',
     'Kevin',
     'Roberto',
-    'Uiviano',
+    'Viviana',
     'Mikal',
-    'Ailed'
+    'Alexander'
   ];
 
   @override
@@ -95,15 +95,16 @@ class _SegundoSemestreState extends State<SegundoSemestre> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[50],
       appBar: AppBar(
-        title: const Text('Sorteo 2° Semestre'),
+        title: const Text('Sorteo 8° Semestre'),
+        centerTitle: true,
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        foregroundColor: Colors.blueGrey[800],
       ),
-      body: Container(
-        decoration: const BoxDecoration(
-            gradient: RadialGradient(colors: [
-          Color.fromRGBO(255, 255, 255, 10),
-          Color.fromRGBO(224, 224, 180, 0.965)
-        ], radius: 0.4)),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 24.0),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -117,27 +118,38 @@ class _SegundoSemestreState extends State<SegundoSemestre> {
                   fit: BoxFit.cover,
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 24),
               Text(
                 _ganador.isEmpty
                     ? 'Presiona el botón para sortear'
                     : 'Ganador: $_ganador',
-                style: const TextStyle(
-                    fontSize: 24, color: Color.fromARGB(255, 0, 0, 0)),
-              ),
-              const SizedBox(height: 20),
-              ElevatedButton.icon(
-                onPressed: _realizarSorteo,
-                icon: const Icon(Icons.refresh),
-                label: const Text('Realizar Sorteo'),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor:
-                      Colors.green, // Color diferente para 2° semestre
-                  foregroundColor: const Color.fromARGB(255, 0, 0, 0),
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: _ganador.isEmpty
+                      ? FontWeight.w300
+                      : FontWeight.bold,
+                  color: Colors.blueGrey[800],
+                  height: 1.4,
                 ),
               ),
+              const SizedBox(height: 32),
+              SizedBox(
+                width: 200, 
+                child: OutlinedButton.icon(
+                  onPressed: _realizarSorteo,
+                  icon: const Icon(Icons.autorenew),
+                  label: const Text('Realizar Sorteo'),
+                  style: OutlinedButton.styleFrom(
+                    foregroundColor: Colors.blueGrey[800],
+                    side: BorderSide(color: Colors.blueGrey[300]!),
+                    minimumSize: const Size(200, 56), 
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                  ),
+                ),
+              )
             ],
           ),
         ),
