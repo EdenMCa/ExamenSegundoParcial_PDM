@@ -54,11 +54,7 @@ class _CuartoSemestreState extends State<CuartoSemestre> {
       ];
 
       // Variable que indica cuando dura la animación de movimiento entre imágenes.
-<<<<<<< HEAD
       var duracion = const Duration(milliseconds: 200);
-=======
-      var duracion = const Duration(milliseconds: 100);
->>>>>>> main
 
       for (var cara in listaRutas) {
         setState(() {
