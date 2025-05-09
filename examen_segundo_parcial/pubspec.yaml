@@ -67,6 +67,7 @@ flutter:
       - assets/images/compa_5.jpeg
       - assets/images/compa_6.jpeg
       - assets/images/compa_7.jpeg
+      
       - assets/images/segundo/segundo_0.jpeg
       - assets/images/segundo/segundo_1.jpeg
       - assets/images/segundo/segundo_2.jpeg
@@ -87,7 +88,19 @@ flutter:
       - assets/images/segundo/segundo_17.jpeg
       - assets/images/segundo/segundo_18.jpeg
 
-
+      - assets/images/cuarto_semestre/cuarto_1.jpeg
+      - assets/images/cuarto_semestre/cuarto_2.jpeg
+      - assets/images/cuarto_semestre/cuarto_3.jpeg
+      - assets/images/cuarto_semestre/cuarto_4.jpeg
+      - assets/images/cuarto_semestre/cuarto_5.jpeg
+      - assets/images/cuarto_semestre/cuarto_6.jpeg
+      - assets/images/cuarto_semestre/cuarto_7.jpeg
+      - assets/images/cuarto_semestre/cuarto_8.jpeg
+      - assets/images/cuarto_semestre/cuarto_9.jpeg
+      - assets/images/cuarto_semestre/cuarto_10.jpeg
+      - assets/images/cuarto_semestre/cuarto_11.jpeg
+      - assets/images/decimo_semestre/decimo_1.jpeg
+      - assets/images/decimo_semestre/decimo_2.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
