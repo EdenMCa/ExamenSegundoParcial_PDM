@@ -10,7 +10,7 @@ class SeleccionSemestre extends StatelessWidget {
 
   // Mapa de semestres a sus respectivas pantallas
   final Map<int, Widget Function()> semestres = const {
-    //2: SegundoSemestre.new,
+    2: SegundoSemestre.new,
     4: CuartoSemestre.new,
     6: SextoSemestre.new,
     8: OctavoSemestre.new,
